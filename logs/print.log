@@ -1,0 +1,44 @@
+package com.TNG.pom.loginPage;
+
+import com.basepage.AbstractBasePage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LogInPage extends AbstractBasePage {
+    public LogInPage(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
+        /***
+         * Locators
+         * */
+
+
+        @FindBy(xpath = "//*[@id='user_email']")
+        private WebElement emailField;
+
+        @FindBy(xpath = "//*[@id='user_password']")
+        private WebElement passWordField;
+
+        @FindBy(xpath = "//*[@type='submit']")
+        private WebElement submitButton;
+
+    /***
+     * Method
+     */
+
+    public void login(String email, String password) {
+        sendKeyToTextBox(emailField, email);
+        sendKeyToTextBox(passWordField, password);
+
+    }
+    public void clickOn_SubmitButton() {
+        submitButton(submitButton);
+    }
+
+    public void fill_Login() {
+        login("test@email.com", "abcabc");
+    }
+}

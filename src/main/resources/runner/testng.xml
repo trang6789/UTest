@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression" parallel="tests">
+
+    <listeners>
+        <listener class-name="com.utilities.reports.testngListener"/>
+    </listeners>
+
+    <test name="AccessForm">
+        <classes>
+            <class name="com/testcase/TestAccess.java"/>
+        </classes>
+    </test>
+
+</suite> <!-- Suite -->
